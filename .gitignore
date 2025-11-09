@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/data/memphis-police-department-public-safety-incidents0.csv
 # misc
 .DS_Store
 .env.local
