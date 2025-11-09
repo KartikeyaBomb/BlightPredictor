@@ -140,7 +140,7 @@ export default function Home() {
           <div className="container">
             <div className="section-header">
               <span className="section-label">Understanding the Problem</span>
-              <h2 className="section-title">Understanding Memphis' Blight Crisis</h2>
+              <h2 className="section-title">There's No Stopping It</h2>
               <p className="section-description">
                 With a large geographic service area and finite resources, Memphis faces
                 significant challenges in effectively prioritizing blight mitigation efforts.
@@ -173,15 +173,16 @@ export default function Home() {
                   properties, communities, and property owners indicate recurring problems.
                 </p>
               </div>
-
+              <div className="hero-buttons">
+                </div>       
+            </div>
               <div className="problem-card">
-                <div className="problem-icon">🏘️</div>
-                <h3>Geographic Coverage</h3>
-                <p>
-                  Managing blight mitigation across Memphis' extensive service area
-                  requires strategic prioritization and efficient planning.
-                </p>
-              </div>
+              <div className="problem-icon">🏘️</div>
+              <h3>Geographic Coverage</h3>
+              <p>
+                Managing blight mitigation across Memphis' extensive service area
+                requires strategic prioritization and efficient planning.
+              </p>
             </div>
           </div>
         </section>
@@ -191,7 +192,7 @@ export default function Home() {
           <div className="container">
             <div className="section-header">
               <span className="section-label">Recognizing a pattern</span>
-              <h2 className="section-title">How Our Algorithm Prevents Blight</h2>
+              <h2 className="section-title">How Our Algorithm Predicts Blight</h2>
               <p className="section-description">
                 We have an algorithm that shows how we can prevent blight by looking at other data sources 
                 to identify patterns and predict high-risk areas before they become critical.

@@ -407,6 +407,18 @@ body {
   box-shadow: var(--glass-glow);
 }
 
+.problem-card2 {
+  padding: 2rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.8));
+  box-shadow: var(--glass-glow);
+}
+
 .problem-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-primary);
