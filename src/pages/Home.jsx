@@ -310,8 +310,8 @@ export default function Home() {
               <span className="section-label">Next steps</span>
               <h2 className="section-title">Moving Forward</h2>
               <p className="section-description">
-                Building on our predictive algorithm to create actionable solutions 
-                for Memphis' blight mitigation efforts.
+                Expanding our predictive algorithm to create actionable predictions 
+                specific to Memphis's blight mitigation efforts.
               </p>
             </div>
 
@@ -319,37 +319,25 @@ export default function Home() {
               <div className="solution-features">
                 <div className="feature">
                   <div className="feature-number">01</div>
-                  <h3>Enhanced Data Integration</h3>
+                  <h3>Expanding Data Set</h3>
                   <p>
-                    Expand our algorithm to incorporate additional data sources and 
-                    improve prediction accuracy for early intervention.
+                    Include data from all Memphis districts and more local databases with different information to find specific predictors with less error.
                   </p>
                 </div>
 
                 <div className="feature">
                   <div className="feature-number">02</div>
-                  <h3>Real-Time Monitoring</h3>
+                  <h3>Implment Preventative Measures</h3>
                   <p>
-                    Develop a system for continuous monitoring and alerts to help 
-                    City staff respond quickly to emerging blight patterns.
+                    Use predictions to guide proactive blight mitigation strategies, reducing the incidence of blight before it occurs.
                   </p>
                 </div>
 
                 <div className="feature">
                   <div className="feature-number">03</div>
-                  <h3>Community Engagement</h3>
+                  <h3>Investigate Causes of Blight</h3>
                   <p>
-                    Create tools for residents to report concerns and participate 
-                    in neighborhood improvement initiatives.
-                  </p>
-                </div>
-
-                <div className="feature">
-                  <div className="feature-number">04</div>
-                  <h3>Resource Optimization</h3>
-                  <p>
-                    Implement automated resource allocation recommendations to maximize 
-                    the impact of blight mitigation programs.
+                    Use insights from the predictive model to guide research into the root causes of blight in Memphis neighborhoods.
                   </p>
                 </div>
               </div>
