@@ -198,13 +198,7 @@ export default function Home() {
                 to identify patterns and predict high-risk areas before they become critical.
               </p>
             </div>
-            <div className="problem-card">
-               <h3>Multi-Source Analysis</h3>
-                  <p>
-                    Integrating code enforcement requests, eviction data, and police
-                    reports to identify patterns and predict blight risk.
-                  </p>
-            </div>
+          
             <br />
 
             <div className="map-header-inline">
