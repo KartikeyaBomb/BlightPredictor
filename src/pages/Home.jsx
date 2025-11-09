@@ -179,6 +179,56 @@ export default function Home() {
           </div>
         </section>
 
+          {/* Data Section */}
+        <section ref={dataRef} className="section data-section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Looking in to the future</span>
+              <h2 className="section-title">Predictive Insights</h2>
+              <p className="section-description">
+                By analyzing historical patterns across multiple data sources, we can predict 
+                and prevent future blight before it emerges.
+              </p>
+            </div>
+
+            <div className="data-grid">
+              <div className="data-card">
+                <div className="data-icon">🏛️</div>
+                <h3>Code Enforcement</h3>
+                <p>Historical code enforcement requests revealing recurring violations and problem properties.</p>
+                <div className="data-stat">10,000+ Records</div>
+              </div>
+
+              <div className="data-card">
+                <div className="data-icon">📋</div>
+                <h3>Eviction Data</h3>
+                <p>Eviction patterns indicating housing instability and potential abandonment risks.</p>
+                <div className="data-stat">5,000+ Cases</div>
+              </div>
+
+              <div className="data-card">
+                <div className="data-icon">👮</div>
+                <h3>Police Reports</h3>
+                <p>Crime data highlighting areas requiring additional attention and community support.</p>
+                <div className="data-stat">15,000+ Reports</div>
+              </div>
+            </div>
+
+            <div className="cta-section">
+              <h3>Ready to Make an Impact?</h3>
+              <p>
+                This tool helps Memphis prioritize resources effectively, ensuring that
+                City staff and community members can work together to address blight
+                where it matters most.
+              </p>
+              <button className="btn btn-primary" onClick={() => scrollToSection(mapRef)}>
+                Explore the Map
+              </button>
+            </div>
+          </div>
+        </section>
+
+
         {/* Solution Section */}
         <section ref={solutionRef} className="section solution-section">
           <div className="container">
@@ -248,55 +298,7 @@ export default function Home() {
 
                 
 
-        {/* Data Section */}
-        <section ref={dataRef} className="section data-section">
-          <div className="container">
-            <div className="section-header">
-              <span className="section-label">Looking in to the future</span>
-              <h2 className="section-title">Predictive Insights</h2>
-              <p className="section-description">
-                By analyzing historical patterns across multiple data sources, we can predict 
-                and prevent future blight before it emerges.
-              </p>
-            </div>
-
-            <div className="data-grid">
-              <div className="data-card">
-                <div className="data-icon">🏛️</div>
-                <h3>Code Enforcement</h3>
-                <p>Historical code enforcement requests revealing recurring violations and problem properties.</p>
-                <div className="data-stat">10,000+ Records</div>
-              </div>
-
-              <div className="data-card">
-                <div className="data-icon">📋</div>
-                <h3>Eviction Data</h3>
-                <p>Eviction patterns indicating housing instability and potential abandonment risks.</p>
-                <div className="data-stat">5,000+ Cases</div>
-              </div>
-
-              <div className="data-card">
-                <div className="data-icon">👮</div>
-                <h3>Police Reports</h3>
-                <p>Crime data highlighting areas requiring additional attention and community support.</p>
-                <div className="data-stat">15,000+ Reports</div>
-              </div>
-            </div>
-
-            <div className="cta-section">
-              <h3>Ready to Make an Impact?</h3>
-              <p>
-                This tool helps Memphis prioritize resources effectively, ensuring that
-                City staff and community members can work together to address blight
-                where it matters most.
-              </p>
-              <button className="btn btn-primary" onClick={() => scrollToSection(mapRef)}>
-                Explore the Map
-              </button>
-            </div>
-          </div>
-        </section>
-
+      
         {/* Next Steps Section */}
         <section ref={nextStepsRef} className="section solution-section">
           <div className="container">
