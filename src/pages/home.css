@@ -264,7 +264,7 @@ body {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 2rem;
-  font-size: 0.875rem;
+  font-size: 0.975rem;
   font-weight: 600;
   color: var(--accent-primary);
   margin-bottom: 2rem;
@@ -274,7 +274,7 @@ body {
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 7.5rem;
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
@@ -288,7 +288,7 @@ body {
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   color: var(--text-secondary);
   max-width: 700px;
   margin: 0 auto 2.5rem;
@@ -299,7 +299,7 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* Buttons */

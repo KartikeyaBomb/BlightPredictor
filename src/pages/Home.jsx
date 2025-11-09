@@ -102,34 +102,30 @@ export default function Home() {
         <section ref={heroRef} className="section hero-section">
           <div className="container">
             <div className="hero-content">
-              <div className="hero-badge">Memphis Hackathon 2025</div>
+              <div className="hero-badge">Innovate Memphis Hackathon 2025</div>
               <h1 className="hero-title">
                 Blight
-                <span className="gradient-text"> Zero</span>
+                <span className="gradient-text"> Predictor</span>
               </h1>
+                            <div className="hero-buttons">
+              </div>
               <p className="hero-description">
                 Empowering City staff and community members with advanced data analysis
                 to prioritize properties for blight mitigation efforts across Memphis.
               </p>
               <div className="hero-buttons">
-                <button className="btn btn-primary" onClick={() => scrollToSection(mapRef)}>
-                  Explore Map
-                </button>
-                <button className="btn btn-secondary" onClick={() => scrollToSection(problemRef)}>
-                  Learn More
-                </button>
               </div>
               <div className="hero-stats">
-                <div className="stat">
-                  <div className="stat-number">4</div>
-                  <div className="stat-label">Priority Zones</div>
-                </div>
                 <div className="stat">
                   <div className="stat-number">3</div>
                   <div className="stat-label">Data Sources</div>
                 </div>
                 <div className="stat">
-                  <div className="stat-number">1000s</div>
+                  <div className="stat-number">97,427</div>
+                  <div className="stat-label">Data Entries</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">4,853</div>
                   <div className="stat-label">Properties Analyzed</div>
                 </div>
               </div>
