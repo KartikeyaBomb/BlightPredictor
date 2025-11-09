@@ -217,7 +217,103 @@ export default function Home() {
         </section>
 
 
-        {/* SLIDESHOWHERE */}
+        {/* Data Visualization Section */}
+        <section className="section plots-gallery-section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Data Analysis</span>
+              <h2 className="section-title">Visualizing Patterns</h2>
+              <p className="section-description">
+                Our comprehensive analysis reveals clear patterns across multiple data sources,
+                helping identify high-risk areas and predict future blight.
+              </p>
+            </div>
+
+            <div className="plots-gallery">
+              <div className="plot-card">
+                <img src="/images/plots/evictions_by_month_2021_2022.png" alt="Evictions by Month 2021-2022" />
+                <h3>Eviction Trends</h3>
+                <p>Monthly eviction patterns showing seasonal variations and areas of concern across 2021-2022.</p>
+              </div>
+
+              <div className="plot-card">
+                <img src="/images/plots/police_incidents_by_month_2021_2022.png" alt="Police Incidents by Month" />
+                <h3>Police Incident Patterns</h3>
+                <p>Crime data trends revealing correlations with blight indicators across neighborhoods.</p>
+              </div>
+
+              <div className="plot-card">
+                <img src="/images/plots/service_requests_by_month_2022.png" alt="Service Requests 2022" />
+                <h3>Code Enforcement Requests</h3>
+                <p>311 service request patterns highlighting recurring issues in specific areas.</p>
+              </div>
+
+              <div className="plot-card">
+                <img src="/images/plots/evictions_pie_chart.png" alt="Evictions Distribution" />
+                <h3>Evictions by Category</h3>
+                <p>Distribution of eviction types across Memphis neighborhoods.</p>
+              </div>
+
+              <div className="plot-card">
+                <img src="/images/plots/police_crime_categories_pie_chart.png" alt="Crime Categories" />
+                <h3>Crime Category Breakdown</h3>
+                <p>Analysis of different crime types and their relationship to property conditions.</p>
+              </div>
+
+              <div className="plot-card">
+                <img src="/images/plots/code_enforcement_pie_chart.png" alt="Code Enforcement Categories" />
+                <h3>Enforcement Types</h3>
+                <p>Categories of code violations reported across the city.</p>
+              </div>
+            </div>
+
+            <div className="section-header" style={{ marginTop: '4rem' }}>
+              <h2 className="section-title">Neighborhood Risk Analysis</h2>
+              <p className="section-description">
+                Predictive models showing the relationship between various factors and blight risk
+                in key Memphis neighborhoods.
+              </p>
+            </div>
+
+            <div className="neighborhood-plots">
+              <div className="neighborhood-plot-card">
+                <img src="/images/plots/Egypt_predictors_vs_blight.png" alt="Egypt Neighborhood Analysis" />
+                <h3>
+                  Egypt
+                  <span className="neighborhood-badge">High Risk</span>
+                </h3>
+                <p>Correlation analysis between evictions, police incidents, and code enforcement violations.</p>
+              </div>
+
+              <div className="neighborhood-plot-card">
+                <img src="/images/plots/Orange_Mound_predictors_vs_blight.png" alt="Orange Mound Analysis" />
+                <h3>
+                  Orange Mound
+                  <span className="neighborhood-badge">High Risk</span>
+                </h3>
+                <p>Predictive indicators showing strong correlation with future blight development.</p>
+              </div>
+
+              <div className="neighborhood-plot-card">
+                <img src="/images/plots/Frayser_predictors_vs_blight.png" alt="Frayser Neighborhood Analysis" />
+                <h3>
+                  Frayser
+                  <span className="neighborhood-badge">High Risk</span>
+                </h3>
+                <p>Multi-factor analysis revealing patterns that predict property deterioration.</p>
+              </div>
+
+              <div className="neighborhood-plot-card">
+                <img src="/images/plots/Parkway_Village_predictors_vs_blight.png" alt="Parkway Village Analysis" />
+                <h3>
+                  Parkway Village
+                  <span className="neighborhood-badge">High Risk</span>
+                </h3>
+                <p>Data-driven insights connecting community indicators with blight risk.</p>
+              </div>
+            </div>
+          </div>
+        </section>
                 
 
         {/* Data Section */}
