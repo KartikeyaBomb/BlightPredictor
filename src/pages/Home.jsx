@@ -14,9 +14,9 @@ export default function Home() {
     const handleScroll = () => {
       const sections = [
         { id: "hero", ref: heroRef },
+        { id: "map", ref: mapRef },
         { id: "problem", ref: problemRef },
         { id: "solution", ref: solutionRef },
-        { id: "map", ref: mapRef },
         { id: "data", ref: dataRef },
       ];
 
@@ -61,6 +61,13 @@ export default function Home() {
               Home
             </button>
             <button
+              className={`nav-link ${activeSection === "map" ? "active" : ""}`}
+              onClick={() => scrollToSection(mapRef)}
+            >
+              <span className="nav-dot"></span>
+              Interactive Map
+            </button>
+            <button
               className={`nav-link ${activeSection === "problem" ? "active" : ""}`}
               onClick={() => scrollToSection(problemRef)}
             >
@@ -73,13 +80,6 @@ export default function Home() {
             >
               <span className="nav-dot"></span>
               Our Solution
-            </button>
-            <button
-              className={`nav-link ${activeSection === "map" ? "active" : ""}`}
-              onClick={() => scrollToSection(mapRef)}
-            >
-              <span className="nav-dot"></span>
-              Interactive Map
             </button>
             <button
               className={`nav-link ${activeSection === "data" ? "active" : ""}`}
@@ -131,6 +131,36 @@ export default function Home() {
                 <div className="stat">
                   <div className="stat-number">1000s</div>
                   <div className="stat-label">Properties Analyzed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section ref={mapRef} className="section map-section">
+          <div className="container">
+            <div className="map-header-inline">
+              <span className="section-label">Interactive Exploration</span>
+              <h2 className="section-title">Priority Zones Map</h2>
+              <p className="section-description">
+                Explore highlighted zip codes (38128, 38127, 38118, 38114) showing
+                areas with the highest concentration of blight indicators.
+              </p>
+            </div>
+            <div className="map-container-box">
+              <div className="map-wrapper-compact">
+                <MapContainer />
+                <div className="map-legend">
+                  <h4>Legend</h4>
+                  <div className="legend-item">
+                    <span className="legend-color high-priority"></span>
+                    <span>High Priority Zones</span>
+                  </div>
+                  <div className="legend-item">
+                    <span className="legend-color other-areas"></span>
+                    <span>Other Areas</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -237,36 +267,6 @@ export default function Home() {
                     Generating recommendations based on historical patterns to prevent
                     recurring issues and optimize intervention strategies.
                   </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section ref={mapRef} className="section map-section">
-          <div className="container-full">
-            <div className="map-header">
-              <div className="container">
-                <span className="section-label">Interactive Exploration</span>
-                <h2 className="section-title">Priority Zones Map</h2>
-                <p className="section-description">
-                  Explore highlighted zip codes (38128, 38127, 38118, 38114) showing
-                  areas with the highest concentration of blight indicators.
-                </p>
-              </div>
-            </div>
-            <div className="map-wrapper">
-              <MapContainer />
-              <div className="map-legend">
-                <h4>Legend</h4>
-                <div className="legend-item">
-                  <span className="legend-color high-priority"></span>
-                  <span>High Priority Zones</span>
-                </div>
-                <div className="legend-item">
-                  <span className="legend-color other-areas"></span>
-                  <span>Other Areas</span>
                 </div>
               </div>
             </div>
