@@ -198,56 +198,21 @@ export default function Home() {
                 to identify patterns and predict high-risk areas before they become critical.
               </p>
             </div>
-            
-
-            <div className="solution-content">
-              <div className="solution-features">
-                <div className="feature">
-                  <div className="feature-number">01</div>
-                  <h3>Multi-Source Analysis</h3>
+            <div className="problem-card">
+               <h3>Multi-Source Analysis</h3>
                   <p>
                     Integrating code enforcement requests, eviction data, and police
                     reports to identify patterns and predict blight risk.
                   </p>
-                </div>
-
-                <div className="feature">
-                  <div className="feature-number">02</div>
-                  <h3>Geographic Prioritization</h3>
-                  <p>
-                    Highlighting standout zip codes with concentrated issues, enabling
-                    targeted resource allocation for maximum impact.
-                  </p>
-                </div>
-
-                <div className="feature">
-                  <div className="feature-number">03</div>
-                  <h3>Interactive Visualization</h3>
-                  <p>
-                    Providing an intuitive map interface for City staff and community
-                    members to explore data and understand local challenges.
-                  </p>
-                </div>
-
-                <div className="feature">
-                  <div className="feature-number">04</div>
-                  <h3>Actionable Insights</h3>
-                  <p>
-                    Generating recommendations based on historical patterns to prevent
-                    recurring issues and optimize intervention strategies.
-                  </p>
-                </div>
-              </div>
             </div>
+            <br />
 
             <div className="map-header-inline">
-              <span className="section-label">Interactive Exploration</span>
-              <h2 className="section-title">Priority Zones Map</h2>
-              <p className="section-description">
-                Explore highlighted zip codes (38128, 38127, 38118, 38114) showing
-                areas with the highest concentration of blight indicators.
-              </p>
+              <br />
+
+
             </div>
+            
             <div className="map-container-box">
               <div className="map-wrapper-compact">
                 <MapContainer />
@@ -256,7 +221,10 @@ export default function Home() {
             </div>
           </div>
         </section>
-        
+
+
+        {/* SLIDESHOWHERE */}
+                
 
         {/* Data Section */}
         <section ref={dataRef} className="section data-section">
