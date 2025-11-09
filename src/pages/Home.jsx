@@ -203,300 +203,145 @@ export default function Home() {
               <h2 className="section-title">Blight Foresight Blueprint</h2>
               <p className="section-description">
                 Our goal is to turn disconnected events into early warnings and
-                then into actionable priorities for Memphis — so we can
+                then into actionable priorities for Memphis, so we can
                 intervene before blight takes root.
               </p>
             </div>
 
-            {/* --- helpers local to this component scope --- */}
-            {/* Compact node-set with guaranteed spacing (no overlap) */}
-            <div style={{ display: "none" }} />
-            {(() => {
-              const NodeCluster = ({ connected = false, size = 110 }) => {
-                // triangle layout (no overlap)
-                const r = 18; // node radius (px)
-                const cx = size / 2;
-                const cyTop = 24;
-                const cyBottom = size - 22;
-
-                // three anchor points (triangle)
-                const P1 = { x: cx, y: cyTop };
-                const P2 = { x: cx - 32, y: cyBottom };
-                const P3 = { x: cx + 32, y: cyBottom };
-
-                const nodes = [
-                  { ...P1, emoji: "🚓" },
-                  { ...P2, emoji: "🏚️" },
-                  { ...P3, emoji: "📄" },
-                ];
-
-                return (
+            {/* Three step boxes retained, node emoji triangle visualization removed. */}
+            <div
+              style={{
+                maxWidth: 880,
+                margin: "0 auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 28,
+              }}
+            >
+              {/* STEP 1: Unconnected Events */}
+              <div
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                  borderRadius: 16,
+                  padding: "18px 18px",
+                }}
+              >
+                <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
                   <div
                     style={{
-                      position: "relative",
-                      width: size,
-                      height: size,
-                      minWidth: size,
+                      width: 36,
+                      height: 36,
+                      borderRadius: 999,
+                      display: "grid",
+                      placeItems: "center",
+                      background: "rgba(255,255,255,0.08)",
+                      border: "1px solid rgba(255,255,255,0.16)",
+                      fontSize: 18,
                       flexShrink: 0,
                     }}
                     aria-hidden
                   >
-                    {/* connectors for Step 2 */}
-                    {connected && (
-                      <svg
-                        width={size}
-                        height={size}
-                        style={{
-                          position: "absolute",
-                          inset: 0,
-                          pointerEvents: "none",
-                          opacity: 0.7,
-                        }}
-                      >
-                        <defs>
-                          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                            <stop
-                              offset="0%"
-                              stopColor="rgba(255,255,255,0.2)"
-                            />
-                            <stop
-                              offset="50%"
-                              stopColor="rgba(255,255,255,0.55)"
-                            />
-                            <stop
-                              offset="100%"
-                              stopColor="rgba(255,255,255,0.2)"
-                            />
-                          </linearGradient>
-                        </defs>
-                        <line
-                          x1={P1.x}
-                          y1={P1.y}
-                          x2={P2.x}
-                          y2={P2.y}
-                          stroke="url(#g)"
-                          strokeWidth="2"
-                        />
-                        <line
-                          x1={P1.x}
-                          y1={P1.y}
-                          x2={P3.x}
-                          y2={P3.y}
-                          stroke="url(#g)"
-                          strokeWidth="2"
-                        />
-                        <line
-                          x1={P2.x}
-                          y1={P2.y}
-                          x2={P3.x}
-                          y2={P3.y}
-                          stroke="url(#g)"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                    )}
-
-                    {nodes.map((n, i) => (
-                      <div
-                        key={i}
-                        style={{
-                          position: "absolute",
-                          left: n.x - r - 10,
-                          top: n.y - r - 6,
-                          width: r * 2 + 20,
-                          height: r * 2 + 12,
-                          display: "grid",
-                          placeItems: "center",
-                          borderRadius: 12,
-                          background: connected
-                            ? "rgba(255,255,255,0.10)"
-                            : "rgba(255,255,255,0.06)",
-                          border: connected
-                            ? "1px solid rgba(255,255,255,0.22)"
-                            : "1px solid rgba(255,255,255,0.12)",
-                          boxShadow: connected
-                            ? "0 4px 18px rgba(255,255,255,0.08)"
-                            : "none",
-                          fontSize: 22,
-                        }}
-                      >
-                        {n.emoji}
-                      </div>
-                    ))}
+                    1
                   </div>
-                );
-              };
+                  <div style={{ fontWeight: 700, fontSize: 20 }}>
+                    Unconnected Events
+                  </div>
+                </div>
+                <div style={{ opacity: 0.85, marginTop: 6 }}>
+                  Evictions, police incidents, and minor violations
+                  appear unrelated when seen in isolation.
+                </div>
+              </div>
 
-              return (
-                <div
-                  style={{
-                    maxWidth: 880,
-                    margin: "0 auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    gap: 28,
-                  }}
-                >
-                  {/* STEP 1: Unconnected Events */}
+              {/* down arrow connector */}
+              <div style={{ fontSize: 24, opacity: 0.8 }} aria-hidden>
+                ⬇
+              </div>
+
+              {/* STEP 2: Interconnected Trends */}
+              <div
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.16)",
+                  borderRadius: 16,
+                  padding: "18px 18px",
+                }}
+              >
+                <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
                   <div
                     style={{
-                      width: "100%",
-                      background: "rgba(255,255,255,0.04)",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      borderRadius: 16,
-                      padding: "18px 18px",
+                      width: 36,
+                      height: 36,
+                      borderRadius: 999,
+                      display: "grid",
+                      placeItems: "center",
+                      background: "rgba(255,255,255,0.1)",
+                      border: "1px solid rgba(255,255,255,0.2)",
+                      fontSize: 18,
+                      flexShrink: 0,
                     }}
+                    aria-hidden
                   >
-                    <div
-                      style={{ display: "flex", gap: 16, alignItems: "center" }}
-                    >
-                      {/* LEFT: spaced, unconnected nodes */}
-                      <NodeCluster connected={false} />
+                    2
+                  </div>
+                  <div style={{ fontWeight: 700, fontSize: 20 }}>
+                    Interconnected Trends
+                  </div>
+                </div>
+                <div style={{ opacity: 0.85, marginTop: 6 }}>
+                  Combine events over time → patterns emerge, early
+                  signals of neighborhood stress.
+                </div>
+              </div>
 
-                      {/* RIGHT: text */}
-                      <div style={{ minWidth: 0 }}>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 12,
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: 36,
-                              height: 36,
-                              borderRadius: 999,
-                              display: "grid",
-                              placeItems: "center",
-                              background: "rgba(255,255,255,0.08)",
-                              border: "1px solid rgba(255,255,255,0.16)",
-                              fontSize: 18,
-                              flexShrink: 0,
-                            }}
-                            aria-hidden
-                          >
-                            1
-                          </div>
-                          <div style={{ fontWeight: 700, fontSize: 20 }}>
-                            Unconnected Events
-                          </div>
-                        </div>
-                        <div style={{ opacity: 0.85, marginTop: 6 }}>
-                          Evictions, police incidents, and minor violations
-                          appear unrelated when seen in isolation.
-                        </div>
-                      </div>
+              {/* down arrow connector */}
+              <div style={{ fontSize: 24, opacity: 0.8 }} aria-hidden>
+                ⬇
+              </div>
+
+              {/* STEP 3: Predictive Prioritization */}
+              <div
+                style={{
+                  width: "100%",
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04))",
+                  border: "1px solid rgba(255,255,255,0.22)",
+                  borderRadius: 16,
+                  padding: "20px",
+                }}
+              >
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <div
+                    style={{
+                      width: 36,
+                      height: 36,
+                      borderRadius: 999,
+                      display: "grid",
+                      placeItems: "center",
+                      background: "rgba(255,255,255,0.14)",
+                      border: "1px solid rgba(255,255,255,0.28)",
+                      fontSize: 18,
+                    }}
+                    aria-hidden
+                  >
+                    3
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 700, fontSize: 20 }}>
+                      Predictive Prioritization
                     </div>
-                  </div>
-
-                  {/* down arrow connector */}
-                  <div style={{ fontSize: 24, opacity: 0.8 }} aria-hidden>
-                    ⬇
-                  </div>
-
-                  {/* STEP 2: Interconnected Trends (no timeline bar; nodes to the left; connected) */}
-                  <div
-                    style={{
-                      width: "100%",
-                      background: "rgba(255,255,255,0.06)",
-                      border: "1px solid rgba(255,255,255,0.16)",
-                      borderRadius: 16,
-                      padding: "18px 18px",
-                    }}
-                  >
-                    <div
-                      style={{ display: "flex", gap: 16, alignItems: "center" }}
-                    >
-                      {/* LEFT: connected nodes (with lines) */}
-                      <NodeCluster connected={true} />
-
-                      {/* RIGHT: text */}
-                      <div style={{ minWidth: 0 }}>
-                        <div
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 12,
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: 36,
-                              height: 36,
-                              borderRadius: 999,
-                              display: "grid",
-                              placeItems: "center",
-                              background: "rgba(255,255,255,0.1)",
-                              border: "1px solid rgba(255,255,255,0.2)",
-                              fontSize: 18,
-                              flexShrink: 0,
-                            }}
-                            aria-hidden
-                          >
-                            2
-                          </div>
-                          <div style={{ fontWeight: 700, fontSize: 20 }}>
-                            Interconnected Trends
-                          </div>
-                        </div>
-                        <div style={{ opacity: 0.85, marginTop: 6 }}>
-                          Combine events over time → patterns emerge — early
-                          signals of neighborhood stress.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* down arrow connector */}
-                  <div style={{ fontSize: 24, opacity: 0.8 }} aria-hidden>
-                    ⬇
-                  </div>
-
-                  {/* STEP 3: Predictive Prioritization (unchanged) */}
-                  <div
-                    style={{
-                      width: "100%",
-                      background:
-                        "linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04))",
-                      border: "1px solid rgba(255,255,255,0.22)",
-                      borderRadius: 16,
-                      padding: "20px",
-                    }}
-                  >
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 14 }}
-                    >
-                      <div
-                        style={{
-                          width: 36,
-                          height: 36,
-                          borderRadius: 999,
-                          display: "grid",
-                          placeItems: "center",
-                          background: "rgba(255,255,255,0.14)",
-                          border: "1px solid rgba(255,255,255,0.28)",
-                          fontSize: 18,
-                        }}
-                        aria-hidden
-                      >
-                        3
-                      </div>
-                      <div>
-                        <div style={{ fontWeight: 700, fontSize: 20 }}>
-                          Predictive Prioritization
-                        </div>
-                        <div style={{ opacity: 0.85 }}>
-                          Identify neighborhoods on the cusp of deterioration
-                          and prioritize proactive action.
-                        </div>
-                      </div>
+                    <div style={{ opacity: 0.85 }}>
+                      Identify neighborhoods on the cusp of deterioration
+                      and prioritize proactive action.
                     </div>
                   </div>
                 </div>
-              );
-            })()}
+              </div>
+            </div>
           </div>
         </section>
 
