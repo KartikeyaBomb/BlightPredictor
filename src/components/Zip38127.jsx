@@ -102,7 +102,6 @@ function Zip38127() {
               and code violations. Properties within identified clusters show an
               85% correlation between these factors and rapid decline.
             </p>
-
             <h4
               style={{
                 color: "#ffffff",
