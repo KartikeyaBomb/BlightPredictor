@@ -186,6 +186,7 @@ function MapContainer() {
   // Modal to document.body
   const ModalPortal = () => {
     if (!modalOpen) return null;
+    
     return ReactDOM.createPortal(
       <div
         className="modal-overlay"
@@ -216,7 +217,7 @@ function MapContainer() {
             position: "relative",
             overflow: "auto",
             boxShadow: "0 20px 60px rgba(0, 0, 0, 0.6)",
-            animation: "slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+            animation: "growIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
             color: "#ffffff",
           }}
           onClick={(e) => e.stopPropagation()}
@@ -262,11 +263,25 @@ function MapContainer() {
         </div>
 
         <style>{`
-          @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-          @keyframes slideUp {
-            from { opacity: 0; transform: translateY(40px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
+          @keyframes fadeIn { 
+            from { opacity: 0; } 
+            to { opacity: 1; } 
           }
+          
+          @keyframes growIn {
+            0% {
+              opacity: 0;
+              transform: scale(0.05);
+            }
+            60% {
+              opacity: 1;
+              transform: scale(1.05);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          
           .modal-content::-webkit-scrollbar { width: 8px; }
           .modal-content::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05); border-radius: 4px;

@@ -4,6 +4,7 @@ import "./home.css";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero");
+  const [lightboxImage, setLightboxImage] = useState(null);
   const heroRef = useRef(null);
   const problemRef = useRef(null);
   const solutionRef = useRef(null);
@@ -194,11 +195,50 @@ export default function Home() {
               <span className="section-label">Recognizing a pattern</span>
               <h2 className="section-title">How Our Algorithm Predicts Blight</h2>
               <p className="section-description">
-                We have an algorithm that shows how we can prevent blight by looking at other data sources 
-                to identify patterns and predict high-risk areas before they become critical.
+                We have developed an algorithm which searches through different combinations of metrics to find what parameters can best be used to predict blight trends.
               </p>
             </div>
           
+            
+
+            <div className="plots-gallery">
+              
+
+              <div className="plot-card" onClick={() => setLightboxImage({ 
+                src: "/images/plots/evictions_pie_chart.png", 
+                alt: "Evictions Distribution",
+                title: "Evictions by Category"
+              })} style={{ cursor: 'pointer' }}>
+                <img src="/images/plots/evictions_pie_chart.png" alt="Evictions Distribution" />
+                <h3>Evictions by Category</h3>
+                <p>Distribution of evictions filed across Memphis neighborhoods.</p>
+              </div>
+
+              <div className="plot-card" onClick={() => setLightboxImage({ 
+                src: "/images/plots/police_crime_categories_pie_chart.png", 
+                alt: "Crime Categories",
+                title: "Crime Category Breakdown"
+              })} style={{ cursor: 'pointer' }}>
+                <img src="/images/plots/police_crime_categories_pie_chart.png" alt="Crime Categories" />
+                <h3>Crime Category Breakdown</h3>
+                <p>Distribution of different crime types which were used as parameters in the search algorithm.</p>
+              </div>
+
+              <div className="plot-card" onClick={() => setLightboxImage({ 
+                src: "/images/plots/code_enforcement_pie_chart.png", 
+                alt: "Code Enforcement Categories",
+                title: "Enforcement Types"
+              })} style={{ cursor: 'pointer' }}>
+                <img src="/images/plots/code_enforcement_pie_chart.png" alt="Code Enforcement Categories" />
+                <h3>Enforcement Types</h3>
+                <p>Distribution of code enforcment requests used to estimate blight patters.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
             <br />
 
             <div className="map-header-inline">
@@ -213,107 +253,8 @@ export default function Home() {
                 
               </div>
             </div>
-          </div>
-        </section>
 
 
-        {/* Data Visualization Section */}
-        <section className="section plots-gallery-section">
-          <div className="container">
-            <div className="section-header">
-              <span className="section-label">Data Analysis</span>
-              <h2 className="section-title">Visualizing Patterns</h2>
-              <p className="section-description">
-                Our comprehensive analysis reveals clear patterns across multiple data sources,
-                helping identify high-risk areas and predict future blight.
-              </p>
-            </div>
-
-            <div className="plots-gallery">
-              <div className="plot-card">
-                <img src="/images/plots/evictions_by_month_2021_2022.png" alt="Evictions by Month 2021-2022" />
-                <h3>Eviction Trends</h3>
-                <p>Monthly eviction patterns showing seasonal variations and areas of concern across 2021-2022.</p>
-              </div>
-
-              <div className="plot-card">
-                <img src="/images/plots/police_incidents_by_month_2021_2022.png" alt="Police Incidents by Month" />
-                <h3>Police Incident Patterns</h3>
-                <p>Crime data trends revealing correlations with blight indicators across neighborhoods.</p>
-              </div>
-
-              <div className="plot-card">
-                <img src="/images/plots/service_requests_by_month_2022.png" alt="Service Requests 2022" />
-                <h3>Code Enforcement Requests</h3>
-                <p>311 service request patterns highlighting recurring issues in specific areas.</p>
-              </div>
-
-              <div className="plot-card">
-                <img src="/images/plots/evictions_pie_chart.png" alt="Evictions Distribution" />
-                <h3>Evictions by Category</h3>
-                <p>Distribution of eviction types across Memphis neighborhoods.</p>
-              </div>
-
-              <div className="plot-card">
-                <img src="/images/plots/police_crime_categories_pie_chart.png" alt="Crime Categories" />
-                <h3>Crime Category Breakdown</h3>
-                <p>Analysis of different crime types and their relationship to property conditions.</p>
-              </div>
-
-              <div className="plot-card">
-                <img src="/images/plots/code_enforcement_pie_chart.png" alt="Code Enforcement Categories" />
-                <h3>Enforcement Types</h3>
-                <p>Categories of code violations reported across the city.</p>
-              </div>
-            </div>
-
-            <div className="section-header" style={{ marginTop: '4rem' }}>
-              <h2 className="section-title">Neighborhood Risk Analysis</h2>
-              <p className="section-description">
-                Predictive models showing the relationship between various factors and blight risk
-                in key Memphis neighborhoods.
-              </p>
-            </div>
-
-            <div className="neighborhood-plots">
-              <div className="neighborhood-plot-card">
-                <img src="/images/plots/Egypt_predictors_vs_blight.png" alt="Egypt Neighborhood Analysis" />
-                <h3>
-                  Egypt
-                  <span className="neighborhood-badge">High Risk</span>
-                </h3>
-                <p>Correlation analysis between evictions, police incidents, and code enforcement violations.</p>
-              </div>
-
-              <div className="neighborhood-plot-card">
-                <img src="/images/plots/Orange_Mound_predictors_vs_blight.png" alt="Orange Mound Analysis" />
-                <h3>
-                  Orange Mound
-                  <span className="neighborhood-badge">High Risk</span>
-                </h3>
-                <p>Predictive indicators showing strong correlation with future blight development.</p>
-              </div>
-
-              <div className="neighborhood-plot-card">
-                <img src="/images/plots/Frayser_predictors_vs_blight.png" alt="Frayser Neighborhood Analysis" />
-                <h3>
-                  Frayser
-                  <span className="neighborhood-badge">High Risk</span>
-                </h3>
-                <p>Multi-factor analysis revealing patterns that predict property deterioration.</p>
-              </div>
-
-              <div className="neighborhood-plot-card">
-                <img src="/images/plots/Parkway_Village_predictors_vs_blight.png" alt="Parkway Village Analysis" />
-                <h3>
-                  Parkway Village
-                  <span className="neighborhood-badge">High Risk</span>
-                </h3>
-                <p>Data-driven insights connecting community indicators with blight risk.</p>
-              </div>
-            </div>
-          </div>
-        </section>
                 
 
         {/* Data Section */}
@@ -438,6 +379,92 @@ export default function Home() {
           </div>
         </footer>
       </main>
+
+      {/* Image Lightbox Modal */}
+      {lightboxImage && (
+        <div 
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 10001,
+            padding: '2rem',
+            animation: 'fadeIn 0.3s ease-out',
+            cursor: 'pointer'
+          }}
+          onClick={() => setLightboxImage(null)}
+        >
+          <div 
+            style={{
+              position: 'relative',
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              animation: 'zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setLightboxImage(null)}
+              style={{
+                position: 'absolute',
+                top: '-50px',
+                right: '0',
+                background: 'rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                color: '#ffffff',
+                padding: '10px 20px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                fontWeight: '600',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'}
+              onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
+            >
+              ✕ Close
+            </button>
+            <img 
+              src={lightboxImage.src} 
+              alt={lightboxImage.alt}
+              style={{
+                maxWidth: '100%',
+                maxHeight: '85vh',
+                objectFit: 'contain',
+                borderRadius: '12px',
+                boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8)',
+              }}
+            />
+            <h3 style={{
+              color: '#ffffff',
+              textAlign: 'center',
+              marginTop: '1rem',
+              fontSize: '1.5rem',
+            }}>
+              {lightboxImage.title}
+            </h3>
+          </div>
+          <style>{`
+            @keyframes zoomIn {
+              from {
+                opacity: 0;
+                transform: scale(0.5);
+              }
+              to {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+          `}</style>
+        </div>
+      )}
     </div>
   );
 }
