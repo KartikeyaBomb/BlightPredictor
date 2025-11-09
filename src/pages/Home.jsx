@@ -9,15 +9,16 @@ export default function Home() {
   const solutionRef = useRef(null);
   const mapRef = useRef(null);
   const dataRef = useRef(null);
+  const nextStepsRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = [
         { id: "hero", ref: heroRef },
-        { id: "map", ref: mapRef },
         { id: "problem", ref: problemRef },
         { id: "solution", ref: solutionRef },
         { id: "data", ref: dataRef },
+        { id: "nextSteps", ref: nextStepsRef },
       ];
 
       const scrollPosition = window.scrollY + window.innerHeight / 2;
@@ -48,7 +49,7 @@ export default function Home() {
       <nav className="sidebar">
         <div className="sidebar-content">
           <div className="logo">
-            <h2>Memphis</h2>
+            <h2>Progress</h2>
             <span className="logo-subtitle">Blight Mitigation</span>
           </div>
           
@@ -58,35 +59,35 @@ export default function Home() {
               onClick={() => scrollToSection(heroRef)}
             >
               <span className="nav-dot"></span>
-              Home
-            </button>
-            <button
-              className={`nav-link ${activeSection === "map" ? "active" : ""}`}
-              onClick={() => scrollToSection(mapRef)}
-            >
-              <span className="nav-dot"></span>
-              Interactive Map
+              Intro
             </button>
             <button
               className={`nav-link ${activeSection === "problem" ? "active" : ""}`}
               onClick={() => scrollToSection(problemRef)}
             >
               <span className="nav-dot"></span>
-              The Challenge
+              Understanding the Problem
             </button>
             <button
               className={`nav-link ${activeSection === "solution" ? "active" : ""}`}
               onClick={() => scrollToSection(solutionRef)}
             >
               <span className="nav-dot"></span>
-              Our Solution
+              Recognizing a pattern
             </button>
             <button
               className={`nav-link ${activeSection === "data" ? "active" : ""}`}
               onClick={() => scrollToSection(dataRef)}
             >
               <span className="nav-dot"></span>
-              Data Insights
+              Looking in to the future
+            </button>
+            <button
+              className={`nav-link ${activeSection === "nextSteps" ? "active" : ""}`}
+              onClick={() => scrollToSection(nextStepsRef)}
+            >
+              <span className="nav-dot"></span>
+              Next steps
             </button>
           </div>
 
@@ -133,31 +134,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section ref={mapRef} className="section map-section">
-          <div className="container">
-            <div className="map-header-inline">
-              <span className="section-label">Interactive Exploration</span>
-              <h2 className="section-title">Priority Zones Map</h2>
-              <p className="section-description">
-                Explore highlighted zip codes (38128, 38127, 38118, 38114) showing
-                areas with the highest concentration of blight indicators.
-              </p>
-            </div>
-            <div className="map-container-box">
-              <div className="map-wrapper-compact">
-                <MapContainer />
-                
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Problem Section */}
         <section ref={problemRef} className="section problem-section">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">The Challenge</span>
+              <span className="section-label">Understanding the Problem</span>
               <h2 className="section-title">Understanding Memphis' Blight Crisis</h2>
               <p className="section-description">
                 With a large geographic service area and finite resources, Memphis faces
@@ -208,13 +190,14 @@ export default function Home() {
         <section ref={solutionRef} className="section solution-section">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">Our Approach</span>
-              <h2 className="section-title">Data-Driven Prioritization</h2>
+              <span className="section-label">Recognizing a pattern</span>
+              <h2 className="section-title">How Our Algorithm Prevents Blight</h2>
               <p className="section-description">
-                Combining multiple data sources to identify and prioritize high-risk areas
-                for targeted blight mitigation interventions.
+                We have an algorithm that shows how we can prevent blight by looking at other data sources 
+                to identify patterns and predict high-risk areas before they become critical.
               </p>
             </div>
+            
 
             <div className="solution-content">
               <div className="solution-features">
@@ -255,18 +238,34 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            <div className="map-header-inline">
+              <span className="section-label">Interactive Exploration</span>
+              <h2 className="section-title">Priority Zones Map</h2>
+              <p className="section-description">
+                Explore highlighted zip codes (38128, 38127, 38118, 38114) showing
+                areas with the highest concentration of blight indicators.
+              </p>
+            </div>
+            <div className="map-container-box">
+              <div className="map-wrapper-compact">
+                <MapContainer />
+                
+              </div>
+            </div>
           </div>
         </section>
+        
 
         {/* Data Section */}
         <section ref={dataRef} className="section data-section">
           <div className="container">
             <div className="section-header">
-              <span className="section-label">Data Sources</span>
-              <h2 className="section-title">Comprehensive Analysis</h2>
+              <span className="section-label">Looking in to the future</span>
+              <h2 className="section-title">Predictive Insights</h2>
               <p className="section-description">
-                Our solution leverages multiple data streams to provide a holistic view
-                of blight patterns across Memphis.
+                By analyzing historical patterns across multiple data sources, we can predict 
+                and prevent future blight before it emerges.
               </p>
             </div>
 
@@ -307,25 +306,75 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Next Steps Section */}
+        <section ref={nextStepsRef} className="section solution-section">
+          <div className="container">
+            <div className="section-header">
+              <span className="section-label">Next steps</span>
+              <h2 className="section-title">Moving Forward</h2>
+              <p className="section-description">
+                Building on our predictive algorithm to create actionable solutions 
+                for Memphis' blight mitigation efforts.
+              </p>
+            </div>
+
+            <div className="solution-content">
+              <div className="solution-features">
+                <div className="feature">
+                  <div className="feature-number">01</div>
+                  <h3>Enhanced Data Integration</h3>
+                  <p>
+                    Expand our algorithm to incorporate additional data sources and 
+                    improve prediction accuracy for early intervention.
+                  </p>
+                </div>
+
+                <div className="feature">
+                  <div className="feature-number">02</div>
+                  <h3>Real-Time Monitoring</h3>
+                  <p>
+                    Develop a system for continuous monitoring and alerts to help 
+                    City staff respond quickly to emerging blight patterns.
+                  </p>
+                </div>
+
+                <div className="feature">
+                  <div className="feature-number">03</div>
+                  <h3>Community Engagement</h3>
+                  <p>
+                    Create tools for residents to report concerns and participate 
+                    in neighborhood improvement initiatives.
+                  </p>
+                </div>
+
+                <div className="feature">
+                  <div className="feature-number">04</div>
+                  <h3>Resource Optimization</h3>
+                  <p>
+                    Implement automated resource allocation recommendations to maximize 
+                    the impact of blight mitigation programs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="footer">
           <div className="container">
             <div className="footer-content">
               <div className="footer-section">
-                <h4>Memphis Blight Mitigation</h4>
-                <p>Hackathon 2025 Project</p>
+
               </div>
               <div className="footer-section">
-                <h4>Data Sources</h4>
-                <p>Code Enforcement • Evictions • Police Reports</p>
+
               </div>
               <div className="footer-section">
-                <h4>Focus Areas</h4>
-                <p>38128 • 38127 • 38118 • 38114</p>
+
               </div>
             </div>
             <div className="footer-bottom">
-              <p>&copy; 2025 Memphis Hackathon. Built for community impact.</p>
             </div>
           </div>
         </footer>
