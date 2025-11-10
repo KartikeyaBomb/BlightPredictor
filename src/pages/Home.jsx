@@ -8,7 +8,6 @@ export default function Home() {
   const heroRef = useRef(null);
   const problemRef = useRef(null);
   const solutionRef = useRef(null);
-  const mapRef = useRef(null);
   const dataRef = useRef(null);
   const nextStepsRef = useRef(null);
 
@@ -515,7 +514,20 @@ export default function Home() {
               <div className="footer-section"></div>
               <div className="footer-section"></div>
             </div>
-            <div className="footer-bottom"></div>
+            <div className="footer-bottom">
+              <a
+                href="https://github.com/KartikeyaBomb/BlightPredictor"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "var(--text-secondary)",
+                  textDecoration: "none",
+                  fontSize: "1.25rem",
+                }}
+              >
+                View the Source Code on GitHub
+              </a>
+            </div>
           </div>
         </footer>
       </main>
@@ -609,7 +621,9 @@ export default function Home() {
               }
             }
           `}</style>
+          
         </div>
+        
       )}
     </div>
   );

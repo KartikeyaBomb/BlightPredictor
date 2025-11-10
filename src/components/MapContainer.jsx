@@ -55,7 +55,7 @@ function MapContainer() {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: MAP_STYLE,
-      center: [-90.0, 35.04],
+      center: [-90.0, 35.085],
       zoom: 9.9,
     });
 
