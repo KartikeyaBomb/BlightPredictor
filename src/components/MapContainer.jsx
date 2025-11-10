@@ -22,7 +22,7 @@ const ZIP_COMPONENTS = {
 };
 
 const MAP_STYLE = "mapbox://styles/bomka/cmhqv52hy005d01r0h3udd541";
-const HOT_ZIPS = ["38128", "38127", "38118", "38114"];
+const HOT_ZIPS = ["38127", "38118"];
 
 function hashStringToUnit(str) {
   let h = 2166136261;
@@ -84,6 +84,7 @@ function MapContainer() {
             properties: {
               ...f.properties,
               heat,
+              clickText: HOT_ZIPS.includes(name) ? "Click me" : "",
             },
           };
         }),
@@ -139,6 +140,26 @@ function MapContainer() {
         source: "memphis",
         paint: {
           "fill-opacity": 0,
+        },
+        filter: ["in", ["to-string", ["get", "Name"]], ["literal", HOT_ZIPS]],
+      });
+
+      map.addLayer({
+        id: "hot-zips-text",
+        type: "symbol",
+        source: "memphis",
+        layout: {
+          "text-field": ["get", "clickText"],
+          "text-size": 14,
+          "text-anchor": "center",
+          "text-justify": "center",
+          "text-allow-overlap": true,
+          "text-ignore-placement": true,
+        },
+        paint: {
+          "text-color": "#ffffff",
+          "text-halo-color": "#000000",
+          "text-halo-width": 2,
         },
         filter: ["in", ["to-string", ["get", "Name"]], ["literal", HOT_ZIPS]],
       });
