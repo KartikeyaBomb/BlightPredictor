@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 import Zip38127 from "./Zip38127";
 import Zip38118 from "./Zip38118";
 
-/** Blank fallback for undecided ZIPs */
 function BlankZip({ zip }) {
   return (
     <div style={{ lineHeight: 1.5 }}>
@@ -50,8 +49,7 @@ function MapContainer() {
   useEffect(() => {
     if (mapRef.current) return;
 
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiYm9ta2EiLCJhIjoiY21ocXZuendlMTB1MTJqcHpqamx3NzVrciJ9.LnpWZyAtsFMkWzRbOyMkKw";
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
