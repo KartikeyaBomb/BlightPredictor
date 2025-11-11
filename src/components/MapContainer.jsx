@@ -47,6 +47,19 @@ function MapContainer() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedZip, setSelectedZip] = useState(null);
 
+  // Prevent background scrolling when modal is open (improves mobile behavior)
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = prev || "";
+    }
+    return () => {
+      document.body.style.overflow = prev || "";
+    };
+  }, [modalOpen]);
+
   useEffect(() => {
     if (mapRef.current) return;
 
