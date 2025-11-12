@@ -317,7 +317,55 @@ function MapContainer() {
 
   return (
     <>
-      <div ref={mapContainerRef} style={{ width: "100%", height: "100%" }} />
+      {/* Map wrapper with a compact floating overlay (top-left) */}
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>
+        <div
+          className="map-info-overlay"
+          style={{
+            position: "absolute",
+            top: 12,
+            left: 12,
+            zIndex: 1000,
+            maxWidth: 420,
+            background: "rgba(18,18,26,0.9)",
+            color: "#e6e6e6",
+            padding: "0.6rem 0.9rem",
+            borderRadius: 10,
+            border: "1px solid rgba(255,255,255,0.06)",
+            fontSize: "0.9rem",
+            lineHeight: 1.3,
+            boxShadow: "0 6px 18px rgba(0,0,0,0.45)",
+          }}
+        >
+          <div className="map-info-title">
+            <strong style={{ color: "#ffffff", fontSize: "1rem" }}>Predicted Future Blight Heat Map</strong>
+          </div>
+
+          <div className="map-info-short" aria-hidden="false" style={{ marginTop: 6 }}>
+            <strong style={{ color: "#ffffff" }}>White = less blight · Red = more blight</strong>
+          </div>
+
+          <div className="map-info-long" style={{ marginTop: 6 }}>
+            <div>
+              Model combines recent eviction, police incident, and code
+              enforcement signals to estimate near-term risk by neighborhood.
+            </div>
+          </div>
+
+          <style>{`
+            .map-info-overlay .map-info-title { display: block; }
+            .map-info-overlay .map-info-short { display: block; }
+            .map-info-overlay .map-info-long { display: block; }
+            @media (max-width: 820px) {
+              .map-info-overlay .map-info-long { display: none; }
+              .map-info-overlay .map-info-title { display: block; }
+            }
+          `}</style>
+        </div>
+
+        <div ref={mapContainerRef} style={{ width: "100%", height: "100%" }} />
+      </div>
+
       <ModalPortal />
     </>
   );
